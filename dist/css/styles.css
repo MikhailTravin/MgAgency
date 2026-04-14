@@ -345,6 +345,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   gap: 10px;
 }
@@ -1292,8 +1295,8 @@ body::after {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  margin: 5px 0px 5px 30px;
-  width: calc(100% - 60px);
+  margin: 5px 0px 5px 10px;
+  width: calc(100% - 20px);
 }
 @media (max-width: 768px) {
   .popup-forms__body .form .checkbox {
@@ -1419,9 +1422,11 @@ body::after {
   width: 100%;
   height: auto;
 }
-.block-intro__text1:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+@media (min-width: 993px) {
+  .block-intro__text1:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
 }
 @media (max-width: 768px) {
   .block-intro__text1 {
@@ -1568,9 +1573,11 @@ body::after {
   transition: transform 0.6s ease 0s;
   transition: transform 0.6s ease 0s, -webkit-transform 0.6s ease 0s;
 }
-.block-intro__images:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+@media (min-width: 993px) {
+  .block-intro__images:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
 }
 .block-intro__image1 {
   -webkit-box-flex: 1;
@@ -1876,10 +1883,12 @@ body::after {
   transition: transform 1s, -webkit-transform 1s;
   height: 388px;
 }
-.block-steps__column:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  z-index: 14;
+@media (min-width: 993px) {
+  .block-steps__column:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    z-index: 14;
+  }
 }
 @media (max-width: 1160px) {
   .block-steps__column {
@@ -2228,6 +2237,12 @@ body::after {
   .block-admin-panel__column:hover {
     -webkit-transform: scale(1.02);
             transform: scale(1.02);
+  }
+}
+@media (max-width: 992px) {
+  .block-admin-panel__column:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 @media (max-width: 992px) {
@@ -2637,6 +2652,12 @@ body::after {
   .block-benefits__column:hover {
     -webkit-transform: scale(1.02);
             transform: scale(1.02);
+  }
+}
+@media (max-width: 992px) {
+  .block-benefits__column:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 @media (max-width: 992px) {
