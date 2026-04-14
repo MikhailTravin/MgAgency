@@ -1,0 +1,55 @@
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 20px 0px 0px 0px;
+    transform: translate(0, 100px);
+    opacity: 0;
+    transition:
+        opacity 0.5s ease 0.1s,
+        transform 0.5s ease 0.1s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    &._watcher-view {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    // .arrows__arrow
+
+    &__arrow {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: rgba(217, 217, 217, 0.16);
+        transition: background-color 0.3s;
+        svg {
+            fill: #fff;
+        }
+        &:hover {
+            background-color: #f26d4a;
+        }
+    }
+}
+.arrow-prev {
+    svg {
+        transform: rotate(-180deg);
+        margin: 0px 3px 0px 0px;
+    }
+}
+.arrow-next {
+    svg {
+        margin: 0px 0px 0px 3px;
+    }
+}
+
+.swiper-button-lock {
+    display: none;
+}
+.swiper-button-disabled {
+    opacity: 0.7;
+}
