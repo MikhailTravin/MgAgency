@@ -30,8 +30,8 @@ body::after {
     &::-webkit-scrollbar {
         display: none;
     }
-    @media (max-width: 390px) {
-        padding: 20px 10px;
+    @media (max-width: 600px) {
+        padding: 0px 0px 0px 0px;
     }
 }
 .popup_show {
@@ -54,6 +54,10 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 600px) {
+        min-height: 100vh;
+        justify-content: start;
+    }
 }
 .popup__content {
     position: relative;
@@ -67,8 +71,150 @@ body::after {
     border-radius: 48px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 53px 38px 53px;
+    min-height: 436px;
+    display: flex;
+    flex-direction: column;
     .lock & {
         visibility: visible;
+    }
+    @media (max-width: 600px) {
+        border-radius: 0px;
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+    @media (max-width: 500px) {
+        min-height: 350px;
+        padding: 30px 20px;
+    }
+}
+.popup__close {
+    position: absolute;
+    top: 23px;
+    right: 32px;
+    cursor: pointer;
+    svg {
+        fill: #fff;
+    }
+    @media (max-width: 768px) {
+        top: 15px;
+        right: 20px;
+    }
+}
+
+.popup-forms {
+    // .popup-forms__body
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .btn {
+            opacity: 1;
+            transform: translate(0, 0);
+            min-height: 52px;
+            font-size: 15px;
+            width: 228px;
+            box-shadow: none;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        .form {
+            width: 100%;
+            gap: 20px;
+            .form__input {
+                opacity: 1;
+                transform: translate(0, 0);
+                input {
+                    height: 52px;
+                    font-size: 13px;
+                    padding: 0px 20px;
+                    @media (max-width: 768px) {
+                        height: 45px;
+                        padding: 0px 15px;
+                    }
+                }
+            }
+            .checkbox {
+                opacity: 1;
+                transform: translate(0, 0);
+                margin: 5px 0px 5px 30px;
+                width: calc(100% - 60px);
+                @media (max-width: 768px) {
+                    margin: 0px 0px 0px 0px;
+                    width: 100%;
+                }
+            }
+            .checkbox__label {
+                gap: 14px;
+            }
+            .checkbox__text {
+                font-size: 13px;
+            }
+            .checkbox__icon {
+                width: 25px;
+                height: 25px;
+                flex: 0 0 25px;
+            }
+        }
+    }
+
+    // .popup-forms__logo
+
+    &__logo {
+        height: 52px;
+        width: auto;
+    }
+
+    // .popup-forms__title
+
+    &__title {
+        font-weight: 500;
+        font-size: 52px;
+        line-height: 108%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0px 0px 15px 0px;
+        @media (max-width: 768px) {
+            font-size: 42px;
+        }
+        @media (max-width: 480px) {
+            font-size: 36px;
+        }
+    }
+}
+
+.popup-forms-thanks {
+    .popup-forms__body {
+        flex: 1 1 auto;
+        justify-content: center;
+        gap: 15px;
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 131%;
+            letter-spacing: -0.03em;
+            text-align: center;
+            margin: 10px 0px;
+            @media (max-width: 500px) {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+        .btn {
+            padding: 10px 30px;
+            width: fit-content;
+            min-height: 49px;
+            font-size: 17px;
+        }
+    }
+    .popup-forms__title {
+        font-size: 48px;
+        margin: 0px 0px 0px 0px;
+        @media (max-width: 500px) {
+            font-size: 32px;
+        }
     }
 }
