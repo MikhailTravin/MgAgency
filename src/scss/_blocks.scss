@@ -81,6 +81,35 @@
     // .block-intro__slider
 
     &__slider {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -51px;
+            left: -150px;
+            z-index: 15;
+            width: 222px;
+            height: calc(100% + 90px);
+            filter: blur(70.5px);
+            background: #0a0a0a;
+            @media (max-width: 768px) {
+                width: 150px;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: -51px;
+            right: -150px;
+            z-index: 15;
+            width: 222px;
+            height: calc(100% + 90px);
+            filter: blur(70.5px);
+            background: #0a0a0a;
+            @media (max-width: 768px) {
+                width: 150px;
+            }
+        }
     }
 
     // .block-intro__wrapper
@@ -96,6 +125,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: auto;
         border: 0.68px solid #f26d4a;
         border-radius: 22px;
         background: #1f1f1f;
@@ -109,6 +139,23 @@
         @media (max-width: 480px) {
             width: 180px;
             flex: 0 0 180px;
+        }
+        &.slide-img {
+            img {
+                margin-bottom: -17px;
+                margin-top: -20px;
+                height: 150px;
+                @media (max-width: 768px) {
+                    height: 120px;
+                    margin-bottom: -7px;
+                    margin-top: -12px;
+                }
+                @media (max-width: 480px) {
+                    height: 100px;
+                    margin-bottom: -12px;
+                    margin-top: -8px;
+                }
+            }
         }
         img {
             height: 113px;
@@ -126,6 +173,10 @@
     // .block-intro__title
 
     &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 auto;
         width: 100%;
         font-weight: 600;
         font-size: 16px;
