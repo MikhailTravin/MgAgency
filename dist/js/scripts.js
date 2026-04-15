@@ -158,10 +158,14 @@ if (document.querySelector('.block-intro__slider')) {
   const wrapper = document.querySelector('.block-intro__wrapper');
   const slides = document.querySelectorAll('.block-intro__slide');
 
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    wrapper.appendChild(clone);
-  });
+  const cloneCount = 3; // Увеличьте это число при необходимости (3-5)
+
+  for (let i = 0; i < cloneCount; i++) {
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      wrapper.appendChild(clone);
+    });
+  }
 
   let position = 0;
   let animationId;
@@ -170,8 +174,8 @@ if (document.querySelector('.block-intro__slider')) {
   function animate() {
     position -= speed;
 
-    const wrapperWidth = wrapper.scrollWidth / 2;
-    if (Math.abs(position) >= wrapperWidth) {
+    const totalWidth = wrapper.scrollWidth;
+    if (Math.abs(position) >= totalWidth / 2) {
       position = 0;
     }
 

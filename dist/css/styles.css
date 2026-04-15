@@ -1475,6 +1475,43 @@ body::after {
   top: 0;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyNCAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTEuNjkxMyAyMC4yNUwxLjM3MDM3ZS0wNyAyLjIwMjNlLTA2TDIzLjM4MjcgMS41ODExOGUtMDdMMTEuNjkxMyAyMC4yNVoiIGZpbGw9IndoaXRlIiAvPgo8L3N2Zz4=");
 }
+.block-intro__slider {
+  position: relative;
+}
+.block-intro__slider::before {
+  content: "";
+  position: absolute;
+  top: -51px;
+  left: -150px;
+  z-index: 15;
+  width: 222px;
+  height: calc(100% + 90px);
+  -webkit-filter: blur(70.5px);
+          filter: blur(70.5px);
+  background: #0a0a0a;
+}
+@media (max-width: 768px) {
+  .block-intro__slider::before {
+    width: 150px;
+  }
+}
+.block-intro__slider::after {
+  content: "";
+  position: absolute;
+  top: -51px;
+  right: -150px;
+  z-index: 15;
+  width: 222px;
+  height: calc(100% + 90px);
+  -webkit-filter: blur(70.5px);
+          filter: blur(70.5px);
+  background: #0a0a0a;
+}
+@media (max-width: 768px) {
+  .block-intro__slider::after {
+    width: 150px;
+  }
+}
 .block-intro__slide {
   width: 221px;
   -webkit-box-flex: 0;
@@ -1490,6 +1527,7 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: auto;
   border: 0.68px solid #f26d4a;
   border-radius: 22px;
   background: #1f1f1f;
@@ -1513,6 +1551,25 @@ body::after {
             flex: 0 0 180px;
   }
 }
+.block-intro__slide.slide-img img {
+  margin-bottom: -17px;
+  margin-top: -20px;
+  height: 150px;
+}
+@media (max-width: 768px) {
+  .block-intro__slide.slide-img img {
+    height: 120px;
+    margin-bottom: -7px;
+    margin-top: -12px;
+  }
+}
+@media (max-width: 480px) {
+  .block-intro__slide.slide-img img {
+    height: 100px;
+    margin-bottom: -12px;
+    margin-top: -8px;
+  }
+}
 .block-intro__slide img {
   height: 113px;
   width: auto;
@@ -1529,6 +1586,18 @@ body::after {
   }
 }
 .block-intro__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   width: 100%;
   font-weight: 600;
   font-size: 16px;
